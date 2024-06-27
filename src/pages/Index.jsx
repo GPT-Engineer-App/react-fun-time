@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Separator } from "@/components/ui/separator";
 
-const Index = () => {
+const Index: React.FC = () => {
   return (
     <div className="h-screen w-screen flex flex-col items-center justify-center space-y-8 p-4">
       <h1 className="text-4xl font-bold text-center">Welcome to the Aquarium</h1>
