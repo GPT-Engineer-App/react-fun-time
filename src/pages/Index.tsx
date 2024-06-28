@@ -6,12 +6,12 @@ import { Separator } from "@/components/ui/separator";
 
 const Index = () => {
   return (
-    <div className="h-screen w-screen flex flex-col items-center justify-center space-y-8 p-4">
-      <h1 className="text-4xl font-bold text-center">Welcome to the Aquarium</h1>
+    <div className="h-screen w-screen flex flex-col items-center justify-center space-y-8 p-4 bg-gradient-to-b from-blue-100 to-blue-300">
+      <h1 className="text-4xl font-bold text-center text-primary">Welcome to the Aquarium</h1>
       <Separator />
-      <Card className="w-full max-w-md">
+      <Card className="w-full max-w-md shadow-xl">
         <CardHeader>
-          <CardTitle>Explore the Marine Life</CardTitle>
+          <CardTitle className="text-primary">Explore the Marine Life</CardTitle>
         </CardHeader>
         <CardContent>
           <AspectRatio ratio={16 / 9}>
@@ -27,13 +27,13 @@ const Index = () => {
             enjoy.
           </p>
           <div className="mt-4 flex justify-center">
-            <Button variant="outline">Learn More</Button>
+            <Button variant="outline" className="border-primary text-primary">Learn More</Button>
           </div>
         </CardContent>
       </Card>
-      <Card className="w-full max-w-md mt-8">
+      <Card className="w-full max-w-md mt-8 shadow-xl">
         <CardHeader>
-          <CardTitle>Discover the Coral Reefs</CardTitle>
+          <CardTitle className="text-primary">Discover the Coral Reefs</CardTitle>
         </CardHeader>
         <CardContent>
           <AspectRatio ratio={16 / 9}>
@@ -47,13 +47,13 @@ const Index = () => {
             Explore the vibrant coral reefs and witness the diverse marine life that inhabits these underwater ecosystems.
           </p>
           <div className="mt-4 flex justify-center">
-            <Button variant="outline">Learn More</Button>
+            <Button variant="outline" className="border-primary text-primary">Learn More</Button>
           </div>
         </CardContent>
       </Card>
-      <Card className="w-full max-w-md mt-8">
+      <Card className="w-full max-w-md mt-8 shadow-xl">
         <CardHeader>
-          <CardTitle>Shark Tank Adventure</CardTitle>
+          <CardTitle className="text-primary">Shark Tank Adventure</CardTitle>
         </CardHeader>
         <CardContent>
           <AspectRatio ratio={16 / 9}>
@@ -67,7 +67,7 @@ const Index = () => {
             Get up close and personal with the ocean's most fascinating predators in our thrilling shark tank exhibit.
           </p>
           <div className="mt-4 flex justify-center">
-            <Button variant="outline">Learn More</Button>
+            <Button variant="outline" className="border-primary text-primary">Learn More</Button>
           </div>
         </CardContent>
       </Card>
