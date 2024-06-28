@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
@@ -8,8 +8,19 @@ import { Calendar } from "@/components/ui/calendar";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Terminal } from "lucide-react";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 
 const Index = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const handleLearnMoreClick = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
+
   return (
     <div className="h-screen w-screen flex flex-col items-center justify-center space-y-8 p-4 bg-gradient-to-b from-blue-100 to-blue-300">
       <h1 className="text-4xl font-bold text-center text-primary">Welcome to the Aquarium</h1>
@@ -39,7 +50,22 @@ const Index = () => {
                 enjoy.
               </p>
               <div className="mt-4 flex justify-center">
-                <Button variant="outline" className="border-primary text-primary">Learn More</Button>
+                <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
+                  <DialogTrigger asChild>
+                    <Button variant="outline" className="border-primary text-primary" onClick={handleLearnMoreClick}>Learn More</Button>
+                  </DialogTrigger>
+                  <DialogContent>
+                    <DialogHeader>
+                      <DialogTitle>More Information</DialogTitle>
+                    </DialogHeader>
+                    <p>
+                      Our aquarium is home to a diverse range of marine life, including exotic fish, sea turtles, and more. We are dedicated to marine conservation and education.
+                    </p>
+                    <div className="mt-4 flex justify-center">
+                      <Button variant="outline" className="border-primary text-primary" onClick={handleCloseModal}>Close</Button>
+                    </div>
+                  </DialogContent>
+                </Dialog>
               </div>
             </CardContent>
           </Card>
