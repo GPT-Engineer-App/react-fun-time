@@ -9,6 +9,7 @@ import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/comp
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Terminal } from "lucide-react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import { cn } from "@/lib/utils";
 
 const Index = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -41,7 +42,10 @@ const Index = () => {
                 <img
                   src="/images/aquarium.jpg"
                   alt="Aquarium"
-                  className="rounded-md object-cover"
+                  className={cn("rounded-md object-cover transition-opacity duration-1000 ease-in-out", {
+                    "opacity-0": !isModalOpen,
+                    "opacity-100": isModalOpen,
+                  })}
                 />
               </AspectRatio>
               <p className="mt-4 text-center">
